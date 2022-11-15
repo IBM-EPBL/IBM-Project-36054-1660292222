@@ -61,3 +61,16 @@
 	padding-right: 20px;
 	font-size: 14px;
 }
+
+.loginrow{
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+.container{
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
