@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/styles.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>Smart Lender</title>
-</head>
-<body>
-   
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script src="../static/index.js"></script>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+    <div class="loginrow">
+       <h1>Create Account</h1>
+        <form class="login_form regform" action="">
+            <input class="input-form reg-input-form" type="text" name="name" id="name" placeholder="name"> <br>
+            <input class="input-form reg-input-form" type="email" name="email" id="name" placeholder="email"><br>
+            <input class="input-form reg-input-form" type="password" name="password" placeholder="Password"  id="pwd"> <br>
+            <input class="input-form reg-input-form" type="password" name="confirm_password" placeholder="confirm Password"  id="pwd"> <br>
+            <input class="input-form reg-input-form" type="tel" name="phone" placeholder="Mobile Number"  id="Phone"> <br>
+           
+            <br>
+            <!-- <a class="fgpwd" href=""><p>forgot Password </p></a> 
+            <a class="crt-acc" href="">create account</a><br> -->
+           
+            <p> <span><input type="checkbox" name="accept" id="accept"> </span>I accept <a href="">Terms condition</a></p>
+            <button class="loginbtn" type="submit">Register</button>
+            
+        </form>
+
+    </div>
+
+
+{% endblock %}

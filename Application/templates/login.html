@@ -3,10 +3,15 @@
 {% block body %}
 
 
-    <div class="row loginrow">
-        Sign In
-        <form action="">
-            <input type="text" name="name" id="name" placeholder="name or email or phone">
+    <div class="loginrow">
+       <h1>Sign In</h1>
+        <form class="login_form" action="">
+            <input class="input-form" type="text" name="name" id="name" placeholder="name or email or phone"> <br>
+            <input class="input-form" type="password" name="password" placeholder="Password"  id="pwd"> <br>
+            <a class="fgpwd" href=""><p>forgot Password </p></a> 
+            <a class="crt-acc" href="register">create account</a><br>
+            <button class="loginbtn" type="submit">Login</button>
+            
         </form>
 
     </div>

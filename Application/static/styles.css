@@ -63,11 +63,71 @@
 	margin: auto;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+	height: 100vh;
+	display: grid;
+	padding: 5% 0 0 0 ;
 }
 .container{
 	margin: auto;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+}
+.login_form{
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+
+}
+.input-form{
+	font-size: 1rem;
+	padding:1rem 5rem 1rem 10px;
+	margin:1rem auto;
+	/* border-top: none;
+	border-left: none;
+	border-right: none; */
+	border-width: 0 0 2px 0 ;
+	border-color:  blueviolet;
+	/* border-radius: 5px; */
+	
+}
+.loginrow h1{
+	font-size: 2rem;
+	letter-spacing: 1.5px;
+	color:blueviolet;
+	text-align: center;
+
+}
+.loginbtn{
+	padding: 1rem 8rem ;
+	border-radius: 10px;
+	border: none;
+	
+	background-color: blueviolet;
+	color: white;
+	letter-spacing: 2px;
+	font-weight: 600;
+	margin: 1rem 0px;
+}
+.crt-acc{
+	/* align-items: right; */
+	margin-left: 12rem;
+	color: black;
+}
+
+
+.fgpwd{
+	color: black;
+}
+
+.regform{
+	
+}
+.reg-input-form{
+
+	padding:1rem 7rem 1rem 10px;
+}
+#accept{
+	margin: 0px 1rem 0px 0px;
 }
