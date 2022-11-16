@@ -1,6 +1,9 @@
-*{
-	margin: 0;
-	padding: 0;
+
+
+*{   
+	/* background-color: thistle !important; */
+	margin: auto;
+	padding: auto;
 }
 
 .Team_content h1{
