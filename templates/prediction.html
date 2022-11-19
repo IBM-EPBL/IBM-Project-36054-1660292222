@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+    <title>prediction</title>
+  </head>
+  <body>
+    <script>
+      function valid(){
+      var Ai=document.getElementById("ApplicantIncome").value;
+      var Co=document.getElementById("CoapplicantIncome").value;
+      var LA=document.getElementById("LoanAmount").value;
+      var LT=document.getElementById("Loan_Amount_Term").value;
+      if(Ai > 100000000000000000000000000000000000000){
+        alert("Applicant income is too large enter a valid number")
+        return false;
+      }
+      if(Co > 100000000000000000000000000000000000000){
+        alert("Coapplicant income is too large enter a valid number")
+        return false;
+      }
+      if(LA > 100000000000000000000000000000000000000){
+        alert("Loan Amount is too large enter a valid number")
+        return false;
+      }
+      if(LT > 100000000000000000000000000000000000000){
+        alert("loan amount term is too large enter a valid number")
+        return false;
+      }
+      var name=document.getElementById("Name").value;
+      var letters=/^[a-zA-Z]*$/;
+      if(!name.match(letters)){
+        alert("Name must contain only alphabets")
+        return false;
+      }
+      var num=/^[0-9]+$/;
+      if(!Ai.match(num)){
+        alert("Enter only valid numbers alphabets are not allowed  ")
+        return false;
+      }
+      if(!Co.match(num)){
+        alert("Enter only valid numbers alphabets are not allowed  ")
+        return false;
+      }
+      if(!LA.match(num)){
+        alert("Enter only valid numbers alphabets are not allowed  ")
+        return false;
+      }
+      if(!LT.match(num)){
+        alert("Enter only valid numbers alphabets are not allowed  ")
+        return false;
+      }
+      var mo=document.getElementById("mon").value;
+      var mn=/^[0-9]{10}$/;
+      if(!mo.match(mn)){
+        alert("Please enter only 10 digit mobile number")
+        return false;
+      }
+
+    }
+     </script>
+  <section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      
+      <h1 style="color:blueviolet;">LOAN ELIGIBILITY PREDICTION</h1><br>
+    </div>
+    <div>
+    
+    </div>
+
+<form action='/prediction.html' method="post" onsubmit="return valid()">
+    <div class="frm">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="text" class="input-form reg-input-form" id="Name" name="Name" placeholder="Enter your Name" required >
+    </div>
+    <div class="frm">
+      <label for="exampleFormControlInput1" class="form-label"> Email ID</label>
+      <input type="email" class="input-form reg-input-form" id="email" name="email" placeholder="Enter your Email ID" required >
+  </div>
+  <div class="frm">
+    <label for="exampleFormControlInput1" class="form-label">Mobile Number</label>
+    <input type="text" class="input-form reg-input-form" id="mon" name="mon" placeholder="Enter your Mobile number" required>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label"> Gender</label>
+  <select class="input-form reg-input-form" id="gender" name="gender" aria-label="Default select example" required >
+  <option selected>-- select gender --</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+</select>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label"> Married status</label>
+  <select class="input-form reg-input-form" id="married" name="married" aria-label="Default select example" required >
+  <option selected>-- select married status --</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Dependents</label>
+  <select class="input-form reg-input-form" id="dependents" name="dependents" aria-label="Default select example" required>
+  <option selected>-- select dependents --</option>
+  <option value="0">0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3+">3+</option>
+</select>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Education</label>
+  <select class="input-form reg-input-form" id="education" name="education" aria-label="Default select example" required>
+  <option selected>-- select education --</option>
+  <option value="Graduate">Graduate</option>
+  <option value="Not Graduate">Not Graduate</option>
+</select>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Self_Employed</label>
+  <select class="input-form reg-input-form" id="employed" name="employed" aria-label="Default select example" required>
+  <option selected>-- select Self_Employed --</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Credit_History</label>
+  <select class="input-form reg-input-form" id="credit" name="credit" aria-label="Default select example" required >
+  <option selected >-- select Credit_History --</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+  
+</select>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Property_Area</label>
+  <select class="input-form reg-input-form" id="proparea" name="proparea" aria-label="Default select example" required>
+  <option selected>-- select Property_Area --</option>
+  <option value="Semiurban">Semiurban</option>
+  <option value="Urban">Urban</option>
+  <option value="Rural">Rural</option>
+</select>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Enter ApplicantIncome</label>
+  <input type="text" class="input-form reg-input-form" id="ApplicantIncome" name="ApplicantIncome" placeholder="ApplicantIncome" required>
+  
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Enter CoapplicantIncome</label>
+  <input type="text" class="input-form reg-input-form" id="CoapplicantIncome" name="CoapplicantIncome" placeholder="CoapplicantIncome" required>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Purpose of loan</label>
+  <select class="input-form reg-input-form" id="pur" name="pur" aria-label="Default select example" required>
+  <option selected>-- select the purpose of loan --</option>
+  <option value="person">Personal loan</option>
+  <option value="Bussiness">Bussiness loan</option>
+  <option value="Education">Education loan</option>
+  <option value="Home">Home loan</option>
+  <option value="Other">other</option>
+</select>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Enter LoanAmount</label>
+  <input type="text" class="input-form reg-input-form" id="LoanAmount" name="LoanAmount" placeholder="LoanAmount" required>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Enter Loan_Amount_Term</label>
+  <input type="text" class="input-form reg-input-form" id="Loan_Amount_Term" name="Loan_Amount_Term" placeholder="Loan_Amount_Term" required>
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Enter Adhar Number</label>
+  <input type="text" class="input-form reg-input-form" id="Adhar" name="Adhar" placeholder="Adhar Number" required >
+</div>
+<div class="frm">
+  <label for="exampleFormControlInput1" class="form-label">Enter PAN card ID</label>
+  <input type="text" class="input-form reg-input-form" id="PAN " name="PAN " placeholder="PAN card ID" required>
+</div>
+<div class="frm">
+<label for="property document" class="form-label">Property Document</label><br><input type="file" required >
+</div>
+<div class="frm">
+<label for="Govt ID proof" class="form-label">Govet ID proof</label><br><input type="file" required>
+</div>
+<div class="frm">
+  <input type="checkbox" required>
+  I accept the <a href="terms.html">Terms and conditions</a>
+  </div>
+<br><br>
+<div class="frm">
+<input type="submit" class="loginbtn" value="PREDICT">
+</div>
+    </form>
+
+    
+  </div>
+</section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+  </body>
+</html>
